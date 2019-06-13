@@ -50,7 +50,7 @@ void pop(stack *s){
 }
 
 int main(){
-	int i,n;
+	int i,n,flag=0;
 	char t[MAX];
 	stack s={1000,-1};
 	scanf("%s",t);
@@ -60,6 +60,8 @@ int main(){
 			push(&s,t[i]);
 		}
 		else if(t[i]==')' || t[i]==']' || t[i]=='}') {
+		if(isStackEmpty(&s)==1){
+			
 			if(t[i]==')' && peek(&s)=='(')
 				pop(&s);
 			else if(t[i]==']' && peek(&s)=='[')
@@ -67,18 +69,23 @@ int main(){
 			else if(t[i]=='}'  && peek(&s)=='{')
 				pop(&s);
 			else
+				flag=1;
 				break;
 		}
+	}
 		else{
-			;
+			flag =1;
+			printf("NOT Balanced");
+			break;
 		}
 	}
-	if(isStackEmpty(&s))
+
+	if(flag==0){
+	
+	if(isStackEmpty(&s) )
 		printf("YES Balanced!");
 	else
-		printf("NO");
-	
-
+		printf("NOT Balanced");
 }
-
+}
 
