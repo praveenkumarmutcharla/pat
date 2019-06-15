@@ -75,7 +75,7 @@ int main(){
 	}
 		else{
 			flag =1;
-			printf("NOT Balanced");
+			printf("Not Balanced");
 			break;
 		}
 	}
@@ -85,7 +85,8 @@ int main(){
 	if(isStackEmpty(&s) )
 		printf("YES Balanced!");
 	else
-		printf("NOT Balanced");
+		printf("NO");
 }
 }
+
 

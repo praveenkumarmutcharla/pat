@@ -69,14 +69,16 @@ struct node* swap(struct node* s,type x,type y){
 	struct node* s1=searchNode(s,x);
 	struct node* s2=searchNode(s,y);
 	
-	struct node* temp=s2;
+	struct node* s1p=s1->prev;
+	struct node* s2p=s2->prev;
+	struct node* s1n=s1->next;
+	struct node* s2n=s2->next;
+	
 	
 	if(s1!=NULL || s2!=NULL){
 		
-		s1->next=s2->next;
-		s2->next->prev=s1->next;
-		temp->prev->next=s2;
-		temp->next=s1;	
+		
+	
 	}
 	
 	return s;
