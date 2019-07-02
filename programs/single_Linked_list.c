@@ -164,6 +164,26 @@ struct node* deleteAtPos(struct node* s,int n){
 	}
 }
 
+struct node* delRepeated(struct node* root){
+    if(root == NULL)
+        printf("list is empty");
+    if(root->next == NULL){
+        return root;
+    }
+    else{
+        struct node* t=root;
+        while(t->next!=NULL){
+            if(t->data == t->next->data){
+                struct node* q=t->next;
+                t->next=q->next;
+                free(q);
+            }
+            t=t->next;
+        }
+        return root;
+    }
+}
+
 
 int main(){
 	int i;
