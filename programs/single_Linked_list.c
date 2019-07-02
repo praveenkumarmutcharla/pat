@@ -185,6 +185,18 @@ struct node* delRepeated(struct node* root){
 }
 
 
+struct node* getMiddleNode(struct node* root){
+    struct node* p=root;
+    struct node* q=root;
+    while(  q->next!=NULL && q->next->next!=NULL ){
+        q=q->next->next;
+        p=p->next;
+    }
+    free(q);
+    return p;
+}
+
+
 int main(){
 	int i;
 	struct node* t=NULL;
