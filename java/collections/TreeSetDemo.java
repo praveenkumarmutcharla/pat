@@ -27,6 +27,11 @@ class TreeSetDemo{
         System.out.println(t.pollLast());
         System.out.println(t.descendingSet());
         
+        Iterator itr= t.descendingIterator();
+        while(itr.hasNext()){
+            System.out.print(" "+itr.next());
+        }        
+        
 
         TreeSet s=new TreeSet(new MyComparator());
         
