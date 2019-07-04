@@ -2,14 +2,31 @@ import java.util.*;
 class TreeSetDemo{
     public static void main(String[] args) {
         TreeSet t=new TreeSet();
-
+        
         for(int i=8;i>0;i--)
             t.add(i);
         
         System.out.println(t);
         
+        System.out.println(t.first());
+        System.out.println(t.last());
+        System.out.println(t.headSet(4));
+        System.out.println(t.tailSet(5));
+        System.out.println(t.subSet(2, 6));
+
         // t.add("G"); // ClassCastException
         // t.add(null); // NullPointerException
+        
+        // NavigableSet methods
+        System.out.println(t.floor(3));
+        System.out.println(t.lower(3));
+        System.out.println(t.ceiling(5));
+        System.out.println(t.higher(5));
+        System.out.println(t);
+        System.out.println(t.pollFirst());
+        System.out.println(t.pollLast());
+        System.out.println(t.descendingSet());
+        
 
         TreeSet s=new TreeSet(new MyComparator());
         
@@ -36,4 +53,3 @@ class MyComparator implements Comparator{
         
     }
 }
-
